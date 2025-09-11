@@ -6,7 +6,7 @@ html, body {
 }
 body {
     background-color: #000000;
-    background-image: url('../images/fondo.jpg'); /* ruta de tu imagen */
+    background-image: url('/images/fondo.jpg'); /* ruta de tu imagen */
     background-size: cover;      /* hace que cubra toda la pantalla */ 
     background-repeat: no-repeat; /* no se repite */
     background-position: center;  /* centra la imagen */
