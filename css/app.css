@@ -1,5 +1,15 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    background-color: #000000;
+    background-image: url('../images/fondo.jpg'); /* ruta de tu imagen */
+    background-size: cover;      /* hace que cubra toda la pantalla */ 
+    background-repeat: no-repeat; /* no se repite */
+    background-position: center;  /* centra la imagen */
 }
 
 h1:focus {
@@ -111,4 +121,29 @@ code {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
+}
+
+ li {
+     color: #3bbcff;
+     font-size: 35px;
+ }
+
+.estilo {
+    color: #0a53be;               /* azul como link */
+}
+
+.small-video {
+    width: 10px;      /* ancho deseado */
+    max-width: 90%;    /* adaptable en móviles */
+    margin: auto;      /* centrado */
+}
+
+.link-externo {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link-externo:hover {
+    color: darkblue;
 }
