@@ -125,12 +125,18 @@ code {
 
  li {
      color: #3bbcff;
-     font-size: 35px;
+     font-size: 15px;
  }
 
-.estilo {
+.azulitoTitulo {
     color: #0a53be;               /* azul como link */
 }
+.azulito {
+    color: #3bbcff;               /* azul como link */
+}
+   .superAzulito {
+       color: #00ffff;               /* azul como link */
+   }
 
 .small-video {
     width: 10px;      /* ancho deseado */
@@ -146,4 +152,23 @@ code {
 
 .link-externo:hover {
     color: darkblue;
+}
+.resaltar {
+    color: #00ffff;                 /* color de texto por defecto */
+    background-color: transparent;  /* fondo por defecto */
+    cursor: default;                /* cursor normal por defecto */
+    transition: color .18s ease, background-color .18s ease;
+    text-decoration: none;
+}
+/* al pasar el ratón: cambia color, fondo y muestra la "manita" */
+.resaltar:hover {
+    color: #0a53be;                 /* color del texto al resaltar */
+    background-color: transparent;      /* fondo del resaltado */
+    cursor: pointer;                /* mano */
+}
+
+/* accesibilidad: mostrar el mismo efecto al enfocar con teclado */
+.resaltar:focus {
+    color: #00ffff;
+    background-color: transparent;
 }
