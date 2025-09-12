@@ -29,6 +29,11 @@
         <span class="dismiss">🗙</span>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+    
+    <script>
+        const path = window.location.pathname;
+        window.location.replace('/index.html' + path);
+    </script>
 </body>
 
 </html>
