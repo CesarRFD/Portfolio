@@ -172,3 +172,237 @@ code {
     color: #00ffff;
     background-color: transparent;
 }
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+:root{
+  --brand-900:#0b1220;
+  --brand-700:#111b2f;
+  --brand-500:#1e2b4a;
+  --acc-500:#5cc8ff;
+  --acc-600:#3fb2f0;
+  --ring:#89d3ff;
+  --chip-bg:rgba(92,200,255,.12);
+  --chip-bd:rgba(92,200,255,.35);
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --brand-900:#ffffff;
+    --brand-700:#f8fafc;
+    --brand-500:#e8eef7;
+    --acc-500:#0055ff;
+    --acc-600:#0047d6;
+    --ring:#7bb3ff;
+    --chip-bg:rgba(0,85,255,.08);
+    --chip-bd:rgba(0,85,255,.25);
+  }
+}
+
+/* Tipografía y ritmo */
+body{
+  font-feature-settings: "liga","calt";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Título con gradiente */
+.gradient-title{
+  background: linear-gradient(90deg,var(--acc-500),#b46cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Secciones */
+.section-title{
+  font-weight: 700;
+  font-size: clamp(1.25rem,1.1rem + .8vw,1.75rem);
+  margin-bottom: .75rem;
+  position: relative;
+  padding-bottom: .4rem;
+}
+.section-title::after{
+  content:"";
+  display:block;
+  width:64px; height:3px;
+  margin-top:.45rem;
+  background: linear-gradient(90deg,var(--acc-500),#b46cff);
+  border-radius: 2px;
+}
+
+/* Badge SOLID */
+.badge-solid{
+  background: var(--chip-bg);
+  border:1px solid var(--chip-bd);
+  color: var(--acc-500);
+  padding:.15rem .5rem;
+  border-radius:.5rem;
+  font-weight:600;
+}
+
+/* Chips de skills */
+.chip-list{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  padding:0; margin:0;
+}
+.chip{
+  padding:.5rem .75rem;
+  background: var(--chip-bg);
+  border:1px solid var(--chip-bd);
+  border-radius:999px;
+  font-weight:600;
+  letter-spacing:.2px;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.chip:hover{ transform: translateY(-1px); border-color: var(--acc-500); }
+
+/* Botón CTA */
+.btn-cta{
+  --bs-btn-bg: var(--acc-500);
+  --bs-btn-border-color: var(--acc-500);
+  --bs-btn-hover-bg: var(--acc-600);
+  --bs-btn-hover-border-color: var(--acc-600);
+  --bs-btn-color:#fff;
+  border-radius: .9rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,.15);
+  transition: transform .15s ease, box-shadow .15s ease;
+  text-decoration: none;
+}
+.btn-cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0,0,0,.18);
+}
+
+/* Enlace externo */
+.external-link{
+  text-decoration:none;
+  font-weight:600;
+  gap:.35rem;
+  color: var(--acc-500);
+  padding:.4rem .6rem;
+  border-radius:.6rem;
+  transition: background-color .12s ease, color .12s ease, box-shadow .12s ease;
+}
+.external-link:hover{
+  color:#fff;
+  background: linear-gradient(90deg,var(--acc-500),#b46cff);
+  box-shadow: 0 6px 14px rgba(0,0,0,.15);
+}
+
+/* Hero fondo sutil */
+.hero{
+  background:
+    radial-gradient(1200px 400px at 50% -10%, var(--brand-500), transparent 60%),
+    linear-gradient(180deg,var(--brand-700), transparent 30%);
+  border-radius: 1.25rem;
+}
+
+/* Accesibilidad: focus visible */
+:where(a, button, .chip, .btn-cta):focus-visible{
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: .75rem;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
+}
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/* ==== Tarjetas de proyectos ==== */
+.project-card {
+    background-color: var(--brand-700);
+    border: 1px solid var(--brand-500);
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* Títulos */
+.project-title {
+    background: linear-gradient(90deg,var(--acc-500),#b46cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+/* Lista de mecánicas */
+.project-card .chip-list {
+    justify-content: start;
+    margin-bottom: 1rem;
+}
+
+/* Enlaces de proyecto */
+.links a.external-link {
+    font-size: 0.95rem;
+    padding: .45rem .75rem;
+}
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------*/
+/* ==== Botones de contacto ==== */
+.contact-links {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0.9rem;
+    border: none;
+    color: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    box-shadow: 0 6px 14px rgba(0,0,0,.15);
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 18px rgba(0,0,0,.18);
+}
+
+/* Colores por red */
+.contact-btn.whatsapp {
+    background: linear-gradient(90deg, #25D366, #1ebe5d);
+}
+.contact-btn.linkedin {
+    background: linear-gradient(90deg, #0077B5, #006097);
+}
+.contact-btn.instagram {
+    background: linear-gradient(90deg, #E1306C, #C13584, #833AB4);
+}
+
+/* Enlace de correo */
+.contact-links + .container .external-link {
+    color: var(--acc-500);
+    font-weight: 600;
+}
+.contact-links + .container .external-link:hover {
+    background: linear-gradient(90deg,var(--acc-500),#b46cff);
+    color: #fff;
+    padding: .25rem .5rem;
+    border-radius: .4rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
