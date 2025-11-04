@@ -342,3 +342,78 @@ code{ color:#c02d76; }
 @media (prefers-reduced-motion: reduce){
     *{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
 }
+
+/* =========================
+
+/* ====== Mobile first tweaks ====== */
+
+/* 1) Header compacto y usable en 1 mano */
+@media (max-width: 576px){
+    .page-header {
+        position: sticky; top: 0; z-index: 1020;
+        backdrop-filter: blur(6px);
+        background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+        padding-block: .5rem !important;
+    }
+    .logo-header { width: 40px; border-radius: 10px; }
+    .brand-name { font-size: 1rem; }
+    .cta-group { width: 100%; justify-content: space-between; }
+    .cta-group .btn { flex: 1 1 48%; padding: .6rem .8rem; }
+}
+
+/* 2) Tipografía y espacios más cómodos */
+@media (max-width: 576px){
+    .hero { border-radius: .9rem; padding-block: 1rem !important; }
+    .display-5 { font-size: clamp(1.35rem, 4.8vw, 1.75rem); }
+    .project-title { font-size: clamp(1.1rem, 4.2vw, 1.35rem); }
+    .fs-5 { font-size: 1rem !important; } /* sinopsis */
+    .fw-semibold { font-size: 1rem; }
+}
+
+/* 3) Tarjetas: aire y sombras más suaves */
+@media (max-width: 576px){
+    .project-card {
+        padding: 1rem !important;
+        border-radius: 1rem !important;
+        box-shadow: 0 6px 14px rgba(0,0,0,.18);
+    }
+    .links { justify-content: center !important; gap: .6rem !important; }
+    .links .external-link { width: 100%; text-align: center; }
+}
+
+/* 4) Chips: que no se rompa la línea raro y toques grandes */
+@media (max-width: 576px){
+    .chip-list { gap: .4rem; }
+    .chip { padding: .45rem .6rem; font-size: .9rem; }
+}
+
+/* 5) Video responsivo con controles cómodos */
+.ratio.ratio-16x9 { border-radius: 1rem; }
+@media (max-width: 576px){
+    .ratio.ratio-16x9 { margin: .75rem 0 !important; }
+    iframe { touch-action: manipulation; }
+}
+
+/* 6) Enlaces y botones: área de toque >44px */
+a, button, .btn, .chip {
+    min-height: 44px;
+}
+
+/* 7) Mejorar contraste de textos secundarios en pantallas pequeñas */
+@media (max-width: 576px){
+    .text-body-secondary { color: rgba(255,255,255,.82) !important; }
+}
+
+/* 8) Evitar scroll lateral accidental */
+html, body { overflow-x: hidden; }
+
+/* 9) Safe-areas (iPhone con notch) */
+@supports(padding:max(0px)){
+    .page-header { padding-top: max(.5rem, env(safe-area-inset-top)); }
+    .container, .projects, .hero { padding-left: max(1rem, env(safe-area-inset-left)); padding-right: max(1rem, env(safe-area-inset-right)); }
+}
+
+/* 10) Hover ≠ necesario en touch: suaviza transiciones */
+@media (hover: none){
+    .btn-cta:hover, .btn-ghost:hover, .external-link:hover { transform: none; box-shadow: none; }
+}
